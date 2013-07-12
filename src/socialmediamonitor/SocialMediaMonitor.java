@@ -12,11 +12,16 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import socialmediamonitor.dao.SocialMediaMonitorDAO;
 
 /**
  *
@@ -29,6 +34,9 @@ public class SocialMediaMonitor {
      */
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here
+        
+        SocialMediaMonitorDAO dao;
+        dao = new SocialMediaMonitorDAO();
         
         HttpURLConnection connection = null;
         OutputStreamWriter wr = null;
@@ -72,8 +80,12 @@ public class SocialMediaMonitor {
           
             System.out.println(jsonObject.get("artwork_total"));
             System.out.println(jsonObject.get("artworkset_total"));
-        
-          //System.out.println(sb.toString());
+            try {
+                //System.out.println(sb.toString());
+                  dao.gravarNoBD();
+            } catch (SQLException ex) {
+                Logger.getLogger(SocialMediaMonitor.class.getName()).log(Level.SEVERE, null, ex);
+            }
                     
       } catch (MalformedURLException e) {
           e.printStackTrace();
