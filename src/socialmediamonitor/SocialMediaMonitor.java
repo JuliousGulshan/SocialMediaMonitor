@@ -23,6 +23,8 @@ import org.json.simple.parser.ParseException;
 
 import socialmediamonitor.dao.SocialMediaMonitorDAO;
 
+import weka.associations.AbstractAssociator;
+
 /**
  *
  * @author afonso
