@@ -25,6 +25,7 @@ import socialmediamonitor.dao.SocialMediaMonitorDAO;
 
 import weka.associations.AbstractAssociator;
 
+import edu.stanford.nlp.tagger.common.TaggerConstants;
 /**
  *
  * @author afonso
