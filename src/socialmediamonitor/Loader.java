@@ -1,4 +1,4 @@
-package randori;
+package socialmediamonitor;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,32 +23,30 @@ public class Loader {
 	 * @return Lista de objetos MensagemSMS, com o texto da mensagem e a classe
 	 * @throws IOException
 	 */
-	public static List<MensagemSMS> carregarDocumentosSMS(String diretorioSMS, String classe) throws IOException {
+	public static List<Message> carregarDocumentos(String diretorio, String classe) throws IOException {
 		
-		List<MensagemSMS> listaRetorno = new ArrayList<MensagemSMS>();
+		List<Message> listaRetorno = new ArrayList<>();
 		
 		//Recuperar os documentos em cada diretorio
-		File[] documentos = new File(diretorioSMS).listFiles();
+		File[] documentos = new File(diretorio).listFiles();
 		
 		for(int i=1; i<documentos.length; i++){
-			File f = documentos[i];
+                    File f = documentos[i];
 			
-			//Pular arquivo ".svn" inserido pelo versionamento.
-			if(f.getName().contains(".svn") || f.getName().contains("._.DS_Store")){
-				continue;
-			}
+                    //Pular arquivo ".svn" inserido pelo versionamento.
+                    if(f.getName().contains(".svn") || f.getName().contains("._.DS_Store")){
+                            continue;
+                    }
 			
-			MensagemSMS msg = new MensagemSMS();
+                    Message msg = new Message();
 			
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
-            msg.setMensagem(extractText(bufferedReader).toLowerCase());
-			msg.setClasse(classe);
-            
-            listaRetorno.add(msg);
+                    BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
+                    msg.setMensagem(extractText(bufferedReader).toLowerCase());
+                    msg.setClasse(classe);
 
+                    listaRetorno.add(msg);
 		}
 		
-		documentos = null;
 		return listaRetorno;
 	}
 	
