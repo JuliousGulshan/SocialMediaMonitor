@@ -33,7 +33,7 @@ public class SocialMediaMonitor {
         {
             message.setMensagemTokenizada(Tokenizador.tokenizarPorPalavras(message.getMensagem()));
             TF_IDFUtils.calcularTF(message, vocabulario);
-            // System.out.println(message.getMensagemTokenizada());	
+            //System.out.println(message.getMensagem());	
         }
         
         // CALCULA O IDF
