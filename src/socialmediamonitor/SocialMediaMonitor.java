@@ -5,7 +5,7 @@
 package socialmediamonitor;
 
 import java.io.IOException;
-import socialmediamonitor.dao.SocialMediaMonitorDAO;
+
 import java.util.List;
 /**
  *
