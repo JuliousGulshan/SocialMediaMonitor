@@ -20,7 +20,7 @@ public class Tokenizador {
 	public static List<String> tokenizarPorPalavras(String texto){
 		DocumentPreprocessor dp = new DocumentPreprocessor(new StringReader(texto));
 		
-		List<String> tokens = new ArrayList<>();
+		List<String> tokens = new ArrayList<String>();
 		for (List<HasWord> sentenceTokenized : dp) {
 			for(HasWord w : sentenceTokenized){
 				tokens.add(w.toString());

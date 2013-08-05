@@ -90,7 +90,7 @@ public class TF_IDFUtils {
      * @return idfList - lista com o IDF para cada termo do vocabulario
      */
     public static ArrayList<Double> calcularIDF(List<Message> docsProcessados, int tamanhoVocabulario){
-        ArrayList<Double> idfList = new ArrayList<>();
+        ArrayList<Double> idfList = new ArrayList<Double>();
 
         /*
          * - Conta-se a quantidade de documentos nos quais um termo do vocabulario aparece
@@ -134,7 +134,7 @@ public class TF_IDFUtils {
      */
     public static void calcularTF_IDF(List<Message> docsProcessados, List<Double> idfList){
         for (Message message : docsProcessados) {
-            List<Double> listaTfIdf = new ArrayList<>();
+            List<Double> listaTfIdf = new ArrayList<Double>();
             for (int idxTermoVoc = 0; idxTermoVoc < idfList.size(); idxTermoVoc++) {
                 double tf = message.getTf().get(idxTermoVoc);
                 double idf = idfList.get(idxTermoVoc);

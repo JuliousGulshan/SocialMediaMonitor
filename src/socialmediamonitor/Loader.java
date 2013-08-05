@@ -25,7 +25,7 @@ public class Loader {
 	 */
 	public static List<Message> carregarDocumentos(String diretorio, String classe) throws IOException {
 		
-		List<Message> listaRetorno = new ArrayList<>();
+		List<Message> listaRetorno = new ArrayList<Message>();
 		
 		//Recuperar os documentos em cada diretorio
 		File[] documentos = new File(diretorio).listFiles();
