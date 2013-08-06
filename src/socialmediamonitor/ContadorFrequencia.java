@@ -1,5 +1,6 @@
 package socialmediamonitor;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -38,7 +39,22 @@ public class ContadorFrequencia {
 
     // Exibe conteudo do mapa
     private static void criarVocabulario() {
-        System.out.println(mapa.values());
-        System.out.println(mapa.keySet());
+//        System.out.println(mapa.values());
+//        System.out.println(mapa.keySet());
+        
+        ArrayList<String> arrayVocabulario = new ArrayList<String>();
+        
+        for (Map.Entry<String, Integer> entry : mapa.entrySet()) {
+            String string = entry.getKey();
+            Integer integer = entry.getValue();
+            
+            if (integer >= 5){
+                arrayVocabulario.add(string);
+            }
+        }
+        
+        for (int i = 0; i < arrayVocabulario.size(); i++) {
+            System.out.println(arrayVocabulario.get(i));
+        }
     }
 }
