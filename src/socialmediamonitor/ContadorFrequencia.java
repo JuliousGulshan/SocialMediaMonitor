@@ -9,7 +9,7 @@ public class ContadorFrequencia {
     private static Map<String, Integer> mapa;
 
     // Cria Mapa baseado na entrada de usuario
-    public static void criarMapa(String _str) {
+    public static String[] criarMapa(String _str) {
         
             mapa = new HashMap<String, Integer>(); // Cria o HashMap
 
@@ -34,11 +34,11 @@ public class ContadorFrequencia {
                 }							// contagem de 1 ao mapa
             }
 
-            criarVocabulario();
+            return criarVocabulario();
     }
 
     // Exibe conteudo do mapa
-    private static void criarVocabulario() {
+    private static String[] criarVocabulario() {
         
         ArrayList<String> arrayVocabulario = new ArrayList<String>();
         
@@ -77,8 +77,13 @@ public class ContadorFrequencia {
             }
         }
         
+        String[] ret = new String[arrayVocabulario.size()];
+        
         for (int i = 0; i < arrayVocabulario.size(); i++) {
             System.out.println(arrayVocabulario.get(i));
+            ret[i] = arrayVocabulario.get(i);
         }
+        
+        return ret;
     }
 }

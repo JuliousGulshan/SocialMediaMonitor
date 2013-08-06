@@ -16,11 +16,10 @@ public class SocialMediaMonitor {
     /**
      * @param args the command line arguments
      */
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args) throws IOException {
         
-        // CARREGA O VOCABULARIO
-        String[] vocabulario = Loader.carregarVocabulario("vocabulario.txt");
-        //System.out.println(vocabulario);
+       
         
         // CARREGA A BASE DE TREINAMENTO
         List<Message> baseTreinamento;
@@ -36,7 +35,10 @@ public class SocialMediaMonitor {
             }
         }
        
-       ContadorFrequencia.criarMapa(result);
+        // CARREGA O VOCABULARIO
+        String[] vocabulario = ContadorFrequencia.criarMapa(result);;
+       
+       //
        
         // CRIA IDF RESULT
         List<Double> idfResult;
