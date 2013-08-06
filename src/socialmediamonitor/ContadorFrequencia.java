@@ -39,8 +39,6 @@ public class ContadorFrequencia {
 
     // Exibe conteudo do mapa
     private static void criarVocabulario() {
-//        System.out.println(mapa.values());
-//        System.out.println(mapa.keySet());
         
         ArrayList<String> arrayVocabulario = new ArrayList<String>();
         
@@ -48,7 +46,33 @@ public class ContadorFrequencia {
             String string = entry.getKey();
             Integer integer = entry.getValue();
             
-            if (integer >= 5){
+            if (integer >= 8 && string.length() > 2){
+                if (string.compareTo("has") != 0 && string.compareTo("had") != 0
+                        && string.compareTo("told") != 0 && string.compareTo("much") != 0
+                        && string.compareTo("there") != 0 && string.compareTo("!!!") != 0
+                        && string.compareTo("will") != 0 && string.compareTo("getting") != 0
+                        && string.compareTo("here") != 0 && string.compareTo("your") != 0
+                        && string.compareTo("into") != 0 && string.compareTo("its") != 0
+                        && string.compareTo("got") != 0 && string.compareTo("can") != 0
+                        && string.compareTo("you") != 0 && string.compareTo("your") != 0
+                        && string.compareTo("let") != 0 && string.compareTo("n't") != 0
+                        && string.compareTo("but") != 0 && string.compareTo("because") != 0
+                        && string.compareTo("another") != 0 && string.compareTo("'re") != 0
+                        && string.compareTo("let") != 0 && string.compareTo("n't") != 0
+                        && string.compareTo("...") != 0 && string.compareTo("their") != 0
+                        && string.compareTo("would") != 0 && string.compareTo("paying") != 0
+                        && string.compareTo("get") != 0 && string.compareTo("and") != 0
+                        && string.compareTo("they") != 0 && string.compareTo("then") != 0
+                        && string.compareTo("being") != 0 && string.compareTo("looking") != 0
+                        && string.compareTo("when") != 0 && string.compareTo("this") != 0
+                        && string.compareTo("from") != 0 && string.compareTo("was") != 0
+                        && string.compareTo("that") != 0 && string.compareTo("about") != 0
+                        && string.compareTo("for") != 0 && string.compareTo("are") != 0
+                        && string.compareTo("trying") != 0 && string.compareTo("!!!!") != 0
+                        && string.compareTo("have") != 0 && string.compareTo("even") != 0
+                        && string.compareTo("with") != 0 && string.compareTo("the") != 0
+                        
+                        )
                 arrayVocabulario.add(string);
             }
         }
