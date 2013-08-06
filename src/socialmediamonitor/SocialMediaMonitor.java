@@ -20,12 +20,25 @@ public class SocialMediaMonitor {
         
         // CARREGA O VOCABULARIO
         String[] vocabulario = Loader.carregarVocabulario("vocabulario.txt");
-        System.out.println(vocabulario);
+        //System.out.println(vocabulario);
         
         // CARREGA A BASE DE TREINAMENTO
         List<Message> baseTreinamento;
         baseTreinamento = Loader.carregarDocumentos("BaseTreinamento/PRO", "PRO");
         baseTreinamento.addAll(Loader.carregarDocumentos("BaseTreinamento/CONTRA", "CONTRA"));
+        
+       String result = null;
+
+       for (Message message : baseTreinamento) {
+            String aux = OutputBase.geraVocabulario(message.getMensagem());
+            if (aux != null) {
+                result += aux;
+            }
+        }
+       
+       ContadorFrequencia.criarMapa(result);
+       
+        // CRIA IDF RESULT
         List<Double> idfResult;
         
         // TOKENIZA A BASE DE TREINAMENTO  E CALCULA TF
